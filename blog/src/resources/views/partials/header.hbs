@@ -1,0 +1,36 @@
+<header class="header">
+    <div class="container">
+        {{!-- <div class="row justify-content-between header-padding"> --}}
+            <div class="logo">
+               {{!-- <a href="#"><img width="100px" src="https://scontent.xx.fbcdn.net/v/t1.15752-9/p206x206/252721100_249351940551244_765484087261942469_n.png?_nc_cat=106&ccb=1-5&_nc_sid=aee45a&_nc_ohc=EotWrHjKEgUAX_AqXX4&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=36e0724b628dd209bb92e7a73c9d542c&oe=61A868D9" alt="Ảnh Logo"></a> --}}
+            </div>
+            <button class="nav-toggler" style="float:right">
+                <span></span>
+            </button>
+            <nav class="nav">
+                {{#if login}}
+                <ul>
+                    <li class="nav-item"><a href="">Xin chào {{lcUser}}</a></li>
+                    <li class="nav-item"><a href="/">Trang chủ</a></li>
+                    <li class="nav-item"><a href="/cart">Giỏ hàng</a></li>
+                    <li class="nav-item"><a href="/user/profile">Thông tin cá nhân</a></li>
+                    <li class="nav-item"><a href="/user/logout">Đăng xuất</a></li>
+                </ul>
+                {{else}}
+                <ul>
+                    <li class="nav-item"><a href="/">Trang chủ</a></li>
+                    <li class="nav-item"><a href="/user/login">Đăng nhập</a></li>
+                    <li class="nav-item"><a href="/user/register">Đăng kí</a></li>
+                </ul>
+                {{/if}}
+                {{#if admin}}
+                    <ul>
+                        <li class="nav-item"><a href="/courses/create">Thêm sản phẩm</a></li>
+                        <li class="nav-item"><a href="/me/stored/courses">Danh sách sản phẩm</a></li>
+                        <li class="nav-item"><a href="/user/list">Danh sách khách hàng</a></li>
+                    </ul>
+                {{/if}}
+            </nav>
+        </div>
+    </div>
+</header>  

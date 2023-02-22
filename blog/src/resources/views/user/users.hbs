@@ -1,0 +1,99 @@
+<div class="mt-5">
+    
+    <div>
+        <h3 style="text-align: center;">Danh Sách Khách Hàng</h3>
+        {{!-- <a href="/me/trash/courses">Thùng rác ({{deletedCount}})</a> --}}
+    </div>
+
+    <table style="text-align: center;" class="table">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tài Khoản</th>
+                <th scope="col">Mật Khẩu</th>
+                <th scope="col">Tên</th>
+                <th scope="col">SĐT</th>
+                <th scope="col">Địa Chỉ</th>
+                <th scope="col">Giới Tính</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.username}}</td>
+                <td>{{this.password}}</td>
+                <td>{{this.fullname}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{this.address}}</td>
+                {{#if users.gender}}
+                <td>Nam</td>
+                {{else}}
+                <td>Nữ</td>
+                {{/if}}
+                <td>
+                    <a href="/user/profileByID/{{this._id}}" class="btn btn-link">Sửa</a>
+                </td>
+                <td>
+                    <a href="" class="btn btn-link" data-toggle="modal" data-target="#delete-modal" data-id="{{this._id}}">Xoá</a>
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+                <td style="text-align: center;" colspan="5" class="text-center">
+                    Bạn Chưa Có Khách Hàng Nào !
+                </td>
+            </tr>
+            {{/each}}
+        
+        </tbody>
+    </table>
+</div>
+
+{{!-- Delete hidden form --}}
+<form method="POST" name="delete-form" ></form>
+
+{{!-- Confirm delete --}}
+<div class="modal" id="delete-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="color: black;" class="modal-title">Xoá Khách Hàng !</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có chắc chắn muốn xoá ?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="btn_delete" type="button" class="btn btn-danger">Xoá</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var courseId
+        var btnDelete = document.getElementById('btn_delete')
+        var deleteForm = document.forms['delete-form']
+        
+        $('#delete-modal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) 
+        courseId = button.data('id') 
+
+        })
+
+    
+    btnDelete.onclick = function () {
+        deleteForm.action = '/user/delete/' + courseId + '?_method=DELETE'
+        deleteForm.submit()
+    }
+
+   })
+</script>

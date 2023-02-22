@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Vinamilk</title>
+</head>
+
+<body>
+    
+
+
+
+    <section class="home-section" id="Home">
+    <div class="home-section-bg">
+
+    
+    <div class="container" >
+        <div class="row min-h-100">
+            <div class="home-text" data-aos="fade-up" data-aos-duration="3000">
+            <h2>VINAMILK</h2>
+            <p>Đạt Tiêu Chuẩn</p>
+            <h2>ORGANIC CHÂU ÂU</h2>
+            <p>Đầu tiên tại Việt Nam</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- Home Section begin -->
+<!-- About-Section-begin -->
+<section class="about-section section-padding" id="Gioithieu">
+    <div class="container">
+        <div class="row">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-title="our story">about us</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="about-text" data-aos="fade-right"data-aos-duration="3000" >
+                <h3>Chào mừng các bạn đến với Thế Giới Vilamik</h3>
+                <p>Vinamilk được ra đời từ ngày 20/08/1976. Đây là công ty được thành lập dựa trên cơ sở tiếp quản 3 nhà máy sữa, do chế độ cũ để lại.</p>
+                <p>Từ đó tới nay, khi lần lượt được nhà nước phong tặng các Huân chương Lao Động, Danh hiệu Anh hùng lao động trong thời kỳ đổi mới... Vinamilk đã cho xây dựng các trang trại bò sữa ở khắp mọi miền đất nước.</p>
+                <p>Không chỉ phát triển ở thị trường trong nước, Vinamilk còn mở rộng thương hiệu đến New Zealand và hơn 20 nước khác, trong đó có Mỹ.</p>
+                <p>Ngoài ra, Vinamilk còn là thương hiệu tiên phong mở lối cho thị trường thực phẩm Organic cao cấp tại Việt Nam, với các sản phẩm từ sữa tươi chuẩn USDA Hoa Kỳ.</p>
+               
+            </div>
+            <div class="about-img" data-aos="fade-up"data-aos-duration="3000" >
+                <div class="img-box">
+                    <h2>Đạt chuẩn quốc gia</h2>
+                    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/p206x206/253530515_280994183904027_7919780737692960303_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=aee45a&_nc_ohc=U7BLseK9dNcAX8PBMLX&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=37c2adf8bf5aa79c9ec7934dcdf7bdbd&oe=61A9705B" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About-Section-end -->
+<!-- Menu-Section-begin -->
+<section class="menu-section section-padding" id="Sanpham">
+    <div class="container">
+       
+        <div class="row">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-title="Sản phẩm">our menu</h2>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="menu-taps">
+                <button type="button" class="menu-tap-item active" data-target="#suabot" data-aos="fade-up">Sữa bột</button>
+                <button type="button" class="menu-tap-item" data-target="#suanuoc" data-aos="fade-up">Sữa Nước</button>
+                <button type="button" class="menu-tap-item" data-target="#suadaulanh" data-aos="fade-up">Sữa Đậu Nành</button>
+                <button type="button" class="menu-tap-item" data-target="#suadac" data-aos="fade-up">Sữa Đặc</button>
+            </div>
+        </div>
+
+        <div class="row menu-tap-content active" id="suabot">
+            {{#each suaBot}}
+                {{#if suaBot.position}}
+                 <div class="menu-item" data-aos="fade-right"data-aos-duration="3000">
+                    <div class="menu-item-title">
+                        <img style="width: 100px" src="{{this.image}}" alt="">
+                        <h3>{{this.name}}</h3>
+                    </div>
+                    
+                    <div class="menu-item-price">
+                         {{this.price}} VNĐ
+                    </div>
+                    <a href="/courses/{{this._id}}" class="btn2">Đặt Hàng</a>
+                </div>
+                {{else}}
+                <div class="menu-item" data-aos="fade-left"data-aos-duration="3000">
+                    <div class="menu-item-title">
+                        <img style="width: 100px" src="{{this.image}}" alt="">
+                        <h3>{{this.name}}</h3>
+                    </div>
+                    
+                    <div class="menu-item-price"> 
+                         {{this.price}} VNĐ
+                    </div>
+                    <a href="/courses/{{this._id}}" class="btn2">Đặt Hàng</a>
+                </div>
+                {{/if}}
+            {{/each}}
+            
+        </div>
+        <div class="row menu-tap-content" id="suanuoc">
+            {{#each suaNuoc}}
+                {{#if suaNuoc.position}}
+                 <div class="menu-item" data-aos="fade-right"data-aos-duration="3000">
+                    <div class="menu-item-title">
+                        <img style="width: 100px" src="{{this.image}}" alt="">
+                        <h3>{{this.name}}</h3>
+                    </div>
+                    
+                    <div class="menu-item-price">
+                         {{this.price}} VNĐ
+                    </div>
+                    <a href="/courses/{{this._id}}" class="btn2">Đặt Hàng</a>
+                </div>
+                {{else}}
+                <div class="menu-item" data-aos="fade-left"data-aos-duration="3000">
+                    <div class="menu-item-title">
+                        <img style="width: 100px" src="{{this.image}}" alt="">
+                        <h3>{{this.name}}</h3>
+                    </div>
+                    
+                    <div class="menu-item-price">
+                         {{this.price}} VNĐ
+                    </div>
+                    <a href="/courses/{{this._id}}" class="btn2">Đặt Hàng</a>
+                </div>
+                {{/if}}
+            {{/each}}
+            
+
+        </div>
+    
+        <div class="row menu-tap-content" id="suadaulanh">
+            {{#each suaDauNanh}}
+                {{#if suaDauNanh.position}}
+                 <div class="menu-item" data-aos="fade-right"data-aos-duration="3000">
+                    <div class="menu-item-title">
+                        <img style="width: 100px" src="{{this.image}}" alt="">
+                        <h3>{{this.name}}</h3>
+                    </div>
+                    
+                    <div class="menu-item-price">
+                         {{this.price}} VNĐ
+                    </div>
+                    <a href="/courses/{{this._id}}" class="btn2">Đặt Hàng</a>
+                </div>
+                {{else}}
+                <div class="menu-item" data-aos="fade-left"data-aos-duration="3000">
+                    <div class="menu-item-title">
+                        <img style="width: 100px" src="{{this.image}}" alt="">
+                        <h3>{{this.name}}</h3>
+                    </div>
+                    
+                    <div class="menu-item-price">
+                         {{this.price}} VNĐ
+                    </div>
+                    <a href="/courses/{{this._id}}" class="btn2">Đặt Hàng</a>
+                </div>
+                {{/if}}
+            {{/each}}
+            
+        </div>
+            
+        <div class="row menu-tap-content" id="suadac">
+            {{#each suaDac}}
+                {{#if suaDac.position}}
+                 <div class="menu-item" data-aos="fade-right"data-aos-duration="3000">
+                    <div class="menu-item-title">
+                        <img style="width: 100px" src="{{this.image}}" alt="">
+                        <h3>{{this.name}}</h3>
+                    </div>
+                    
+                    <div class="menu-item-price">
+                         {{this.price}} VNĐ
+                    </div>
+                    <a href="/courses/{{this._id}}" class="btn2">Đặt Hàng</a>
+                </div>
+                
+                {{else}}
+                <div class="menu-item" data-aos="fade-left"data-aos-duration="3000">
+                    <div class="menu-item-title">
+                        <img style="width: 100px" src="{{this.image}}" alt="">
+                        <h3>{{this.name}}</h3>
+                    </div>
+                    
+                    <div class="menu-item-price">
+                         {{this.price}} VNĐ
+                    </div>
+                    <a href="/courses/{{this._id}}" class="btn2">Đặt Hàng</a>
+                </div>
+                {{/if}}
+            {{/each}}
+            
+        </div>
+
+    </div>
+</section>
+<!-- Menu-Section-end -->
+<!-- Testimonis-Section -->
+<section class="testimony section-padding" id="Khachhang">
+    <div class="container">
+        <div class="row">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-title="Khách Hàng">Phản hồi của khách hàng</h2>
+                {{!-- <a href="#our-menu4" class="btn4">Thông tin khách hàng</a> --}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="testimony-item" data-aos="flip-left"data-aos-duration="3000">
+                <div class="testimony-author">
+                    <div class="testimony-name">
+                        <h3>Phạm Nam Sơn</h3>
+                        <span>Khách Hàng VIP</span>
+                    </div>
+                    <div class="testimony-img">
+                        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/s206x206/252524435_731440421105961_3798798143606475276_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=aee45a&_nc_ohc=aXMCTQudSfIAX-0V3ee&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=3824b7b052c5fb4b2f60042e6cae44e3&oe=61A8E937" alt="">
+                    </div>
+                </div>
+                <p>Tôi thật may mắn vì đã tìm được loại sữa bột phù hợp. Lúc đầu, tôi cho bé ăn sữa bột khác, nhưng con tôi vẫn chậm phát triển nên sau đó tôi chuyển sang dùng Sữa Bột Alpha IQ và con đang phát triển rất nhanh và thông minh. Từ đó trở đi tôi cứ cho ăn Sữa Bột Alpha IQ.
+
+                </p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="testimony-item" data-aos="fade-up"data-aos-duration="3000">
+                <div class="testimony-author">
+                    <div class="testimony-name">
+                        <h3>Nguyễn Thị Bình</h3>
+                        <span>Khách Hàng VIP</span>
+                    </div>
+                    <div class="testimony-img">
+                        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/s206x206/252542652_4228388903928058_5111795599401598741_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=aee45a&_nc_ohc=Q52MqV8oFZAAX9ky4SS&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9c1e789a21e6f6e5888f5aadb1633afd&oe=61A8F8FF" alt="">
+                    </div>
+                </div>
+                <p>Tôi đã chọn Purelac là sữa bột đầu tiên cho con tôi. Cho đến nay, bé vẫn đang phát triển cơ thể tốt mà không hề bị suy dinh dưỡng trong vòng 3 tháng gần đây. Tôi nghe nói rằng những đứa trẻ uống sữa khác kém phát triển. Tuy nhiên con tôi thì đang phát triển tốt mà không hề bị trững lại. Sản phẩm đã được đổi thành Sữa Bột Dielac Grow Plus và giá cũng đã tăng lên, nhưng điều đó vẫn ổn. Tôi khuyên thực sự nên dùng Sữa Bột Dielac Grow Plus. Thật tốt khi tôi biết tới sản phẩm này.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="testimony-item"data-aos="flip-right"data-aos-duration="3000">
+                <div class="testimony-author">
+                    <div class="testimony-name">
+                        <h3>Phan Đức Dương</h3>
+                        <span>Khách Hàng VIP</span>
+                    </div>
+                    <div class="testimony-img">
+                        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/p206x206/252882234_1921595748033058_9188765179449558683_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=aee45a&_nc_ohc=Npf5fcK3dv8AX_G5b-Q&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=bad0748954c879f62a9e35c1d6befead&oe=61AB49ED" alt="">
+                    </div>
+                </div>
+                <p>Từ lúc con tôi chào đời, tôi chỉ cho bé ăn Sữa Bột Alpha IQ. Bởi vì ngày ngày bé rất năng động và thông minh.Tôi muốn cho con tôi uống sữa cao cấp, vì thực sự tôi muốn con tôi phát triển tốt nhất. Thật may mắn, con tôi đã ăn rất tốt trong hai tháng. Vào các sự kiện giảm giá sản phẩm, tôi đã đặt hàng luôn 6 hộp. Sau khi ăn Sữa Bột Alpha IQ, con tôi mũm mĩm và thật may mắn khi con không bị bệnh gì.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Team Section begin -->
+<section class="team-section section-padding" id="Nhansu">
+    <div class="container">
+        <div class="row">
+            <div class="section-title"data-aos="fade-up">
+                <h2 data-title="Nhân sự Chủ Chốt">Ban Điều Hành</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="team-item"data-aos="zoom-in"data-aos-duration="3000">
+                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/252891175_409032264020373_6843984460233808774_n.png?_nc_cat=106&ccb=1-5&_nc_sid=aee45a&_nc_ohc=ZyaXOIsFX1YAX9cyuKG&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9c605f4ae43b5f8af2b77262b461abb4&oe=61AA2D86" alt="">
+                <div class="team-item-info">
+                    <h3>Bà Mai Kiều Liên</h3>
+                    <p>Thành viên Hội đồng Quản trị
+                        Chủ tịch Ủy ban Chiến lược
+                        Thành viên Ủy ban Nhân sự
+                        Tổng Giám đốc</p>
+                </div>
+            </div>
+            <div class="team-item"data-aos="zoom-in" data-aos-duration="3000">
+                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/252966447_281216763893652_2143435208970315091_n.png?_nc_cat=102&ccb=1-5&_nc_sid=aee45a&_nc_ohc=EeMUVHRAm8UAX-Nr1e7&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=a9e75116e29d74d814a383fec4ed514d&oe=61A95D13" alt="">
+                <div class="team-item-info">
+                    <h3>Ông Lee Meng Tat</h3>
+                    <p>Thành viên HĐQT không điều hành
+                        Thành viên Ủy ban Chiến lược
+                        Thành viên Ủy ban Nhân sự</p>
+                </div>
+            </div>
+            <div class="team-item"data-aos="zoom-in"data-aos-duration="3000">
+                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/253691399_211995134373574_8884838023677301088_n.png?_nc_cat=107&ccb=1-5&_nc_sid=aee45a&_nc_ohc=453aLQUXWRYAX97MxvM&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=ba44b3b35d3f089ee660c8ff8b9b4185&oe=61AA8068" alt="">
+                <div class="team-item-info">
+                    <h3>Bà Lê Thị Băng Tâm</h3>
+                    <p>Chủ tịch Hội đồng Quản trị
+                        Chủ tịch Ủy ban Nhân sự
+                        Thành viên Ủy ban Lương thưởng
+                        Thành viên HĐQT độc lập</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-section -->
+<section class="footer-section" id="Footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-item">
+                <h3>Địa chỉ</h3>
+                <p>72, Hàm Nghi <br> Thạc Gián, Đà Nẵng</p>
+            </div>
+            <div class="footer-item">
+                <h3>Giờ mở cửa</h3>
+                <p>07:00-23:00 <br> Các ngày trong tuần</p>
+            </div>
+            <div class="footer-item">
+                <h3>Liên hệ</h3>
+                <p>Phone: 0989886666 <br> Email: VinamilkVN@email.com.vn</p>
+                <div class="social-item">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

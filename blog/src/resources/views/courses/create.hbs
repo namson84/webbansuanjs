@@ -1,0 +1,46 @@
+
+<div class="mt-4">
+    <h3 style="text-align: center">Đăng Sản Phẩm</h3>
+
+    <form method="POST" action="/courses/store">
+        <div class="form-group">
+            <label for="name">Tên Sản Phẩm :</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Mô Tả :</label>
+            <input type="text" class="form-control" id="description" name="description">
+        </div>
+
+        <div class="form-group">
+            <label for="image">Ảnh Sản Phẩm :</label>
+            <input type="text" class="form-control" id="image" name="image">
+        </div>
+
+        <div class="form-group">
+            <label for="price">Giá Tiền :</label>
+            <input type="text" class="form-control" id="price" name="price">
+        </div>
+        <div class="form-group">
+            <label for="price">Loại :</label>
+            {{!-- <input type="text" class="form-control" id="type" name="type"> --}}
+            <select id="type" name="type" style="color: black;">
+                <option style="color: black;" value="suaNuoc">Sữa Nước</option>
+                <option style="color: black;" value="suaBot">Sữa Bột</option>
+                <option style="color: black;" value="suaDauNanh">Sữa Đậu Nành</option>
+                <option style="color: black;" value="suaDac">Sữa Đặc</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="price">Vị Trí :</label>
+            {{!-- <input type="text" class="form-control" id="position" name="position"> --}}
+            <select id="position" name="position" style="color: black;">
+                <option style="color: black;" value="true">Trái</option>
+                <option style="color: black;" value="false">Phải</option>
+            </select>
+        </div>
+       
+        <button style="margin-left: 42%" type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
+    </form>
+</div>
